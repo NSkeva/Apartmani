@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+<body class="w3-content w3-border-left w3-border-right">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index:3;width:260px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-transparent w3-display-topright"></i>
+    <h3>Najam</h3>
+    <h3>od x kn</h3>
+    <h6>po danu</h6>
+    <hr>
+    <form class="contact-form">
+      <p><label><i class="fa fa-calendar-check-o"></i> Dolazak</label></p>
+      <input class="w3-input w3-border" id="dolazak" type="text" placeholder="DD MM YYYY" name="dolazak" required>          
+      <p><label><i class="fa fa-calendar-o"></i> Odlazak</label></p>
+      <input class="w3-input w3-border" id="odlazak" type="text" placeholder="DD MM YYYY" name="odlazak" required>         
+      <p><label><i class="fa fa-male"></i> Odrasli</label></p>
+      <input class="w3-input w3-border" id="odrasli" type="number" value="1" name="odrasli" min="1" max="10" required>              
+      <p><label><i class="fa fa-child"></i> Djeca</label></p>
+      <input class="w3-input w3-border" id="djeca" type="number" value="0" name="djeca" min="0" max="10" required>
+      <p><label><i class="fa fa-envelope"></i> Vaš mail</label></p>
+      <input class="w3-input w3-border" id="mail" type="text" name="mail" placeholder="mail" required>
+      <p><button class="w3-button w3-block w3-light-blue w3-left-align" type="submit" onclick="sendEmail()"><i class="fa fa-search w3-margin-right"></i> Pošalji zahtjev</button></p>
+    </form>
+  </div>
+  <div class="w3-bar-block">
+    <!-- <div class="w3-bar-item w3-button w3-padding-16" onclick="document.getElementById('login').style.display='block'"> Prijava</div> -->
+    <!-- <div class="w3-bar-item w3-button w3-padding-16" onclick="document.getElementById('register').style.display='block'"> Registracija</div> -->
+    <a href="#apartment" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-building"></i> Apartmani</a>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-16" onclick="document.getElementById('subscribe').style.display='block'"><i class="fa fa-rss"></i> Pretplata</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-envelope"></i> Kontakt</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <span class="w3-bar-item">Rental</span>
+  <a href="javascript:void(0)" class="w3-right w3-bar-item w3-button" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-white" style="margin-left:260px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:80px"></div>
+
+  <!-- Slideshow Header -->
+  <div class="w3-container" id="apartment">
+    <h1 class="w3-text-black"><b>Apartmani Zlaja</b></h1>
+    <div class="w3-display-container mySlides">
+    <img src="images\living-room-inspiration-1592237936.jpg" style="width:100%;margin-bottom:-6px">
+      <div class="w3-display-bottomright w3-container w3-light-grey">
+        <p>Dnevni boravak</p>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+    <img src="images\imageService.jpg" style="width:100%;margin-bottom:-6px">
+      <div class="w3-display-bottomright w3-container w3-light-grey">
+        <p>Blagavaona</p>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+    <img src="images\creative-bedroom-upgrades-feature.jpg" style="width:100%;margin-bottom:-6px">
+      <div class="w3-display-bottomright w3-container w3-light-grey">
+        <p>Spavaća soba</p>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+    <img src="images\Beautiful-small-white-living-room-blends-monochromatic-beauty-with-modernity-53868.jpg" style="width:100%;margin-bottom:-6px">
+      <div class="w3-display-bottomright w3-container w3-light-grey">
+        <p>Drugi dnevni boravak</p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="images\living-room-inspiration-1592237936.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(1)" title="Living room">
+    </div>
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="images\imageService.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(2)" title="Dining room">
+    </div>
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="images\creative-bedroom-upgrades-feature.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(3)" title="Bedroom">
+    </div>
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="images\Beautiful-small-white-living-room-blends-monochromatic-beauty-with-modernity-53868.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(4)" title="Second Living Room">
+    </div>
+  </div>
+
+  <div class="w3-container">
+    <h4><strong>Prostor</strong></h4>
+    <div class="w3-row w3-large">
+      <div class="w3-col s6">
+        <p><i class="fa fa-fw fa-male"></i> Maksimalan broj ljudi: 4</p>
+        <p><i class="fa fa-fw fa-bath"></i> Broj kupaona: 2</p>
+        <p><i class="fa fa-fw fa-bed"></i> Broj spavaćih soba: 1</p>
+      </div>
+      <div class="w3-col s6">
+        <p><i class="fa fa-fw fa-clock-o"></i> Dolazak: Nakon 15h</p>
+        <p><i class="fa fa-fw fa-clock-o"></i> Odlazak: 12h</p>
+      </div>
+    </div>
+    <hr>
+    
+    <h4><strong>Sadržaj</strong></h4>
+    <div class="w3-row w3-large">
+      <div class="w3-col s6">
+        <p><i class="fa fa-fw fa-shower"></i> Tuš</p>
+        <p><i class="fa fa-fw fa-wifi"></i> WiFi</p>
+        <p><i class="fa fa-fw fa-tv"></i> TV</p>
+      </div>
+      <div class="w3-col s6">
+        <p><i class="fa fa-fw fa-cutlery"></i> Kuhinja</p>
+        <p><i class="fa fa-fw fa-thermometer"></i> Grijanje/Hlađenje</p>
+      </div>
+    </div>
+    <hr>
+    
+    <h4><strong>Dodatne informacije</strong></h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p>Prihvaćamo: <i class="fa fa-credit-card w3-large"></i> <i class="fa fa-cc-mastercard w3-large"></i> <i class="fa fa-cc-amex w3-large"></i> <i class="fa fa-cc-cc-visa w3-large"></i><i class="fa fa-cc-paypal w3-large"></i></p>
+    <hr>
+    
+    <h4><strong>Pravila</strong></h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p>Pretplatite se da bi dobili najnovije ponude i slobodne datume.</p>
+    <p><button class="w3-button w3-light-blue w3-third" onclick="document.getElementById('subscribe').style.display='block'"><b>Pretplati se</b></button></p>
+  </div>
+  <hr>
+
+  <!-- Karta -->
+  <div class="w3-container" id="karta">
+    <h2>Karta</h2>
+    <div class="map-responsive">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15932.124566945424!2d13.661449055893607!3d45.079722200952645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477cc08292c02ca1%3A0xb818c23c24a21cad!2sLidl!5e0!3m2!1shr!2shr!4v1622889449941!5m2!1shr!2shr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+  <hr>
+  
+  <!-- Kontakt -->
+  <div class="w3-container" id="contact">
+    <h2>Kontakt</h2>
+    <i class="fa fa-map-marker" style="width:30px"></i> Rovinj, HR<br>
+    <i class="fa fa-phone" style="width:30px"></i> Mob: +365 <br>
+    <i class="fa fa-envelope" style="width:30px"> </i> Mail: zlaja@gmail.com<br>
+    <p>Pitanja? Slobodno pitajte:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-border" type="text" placeholder="Ime" required name="Name"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Mail" required name="Email"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Poruka" required name="Message"></p>
+    <button type="submit" class="w3-button w3-light-blue w3-third">Pošalji poruku</button>
+    </form>
+  </div>
+  <hr>
+  
+  <footer class="w3-container w3-padding-16" style="margin-top:32px">Powered by: Jandra Skeva Klis</footer>
+
+</div>
+
+<!-- Subscribe Modal -->
+<div id="subscribe" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom w3-padding-large">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('subscribe').style.display='none'" class="fa fa-remove w3-button w3-xlarge w3-right w3-transparent"></i>
+      <h2 class="w3-wide">Pretplati se!</h2>
+      <p>Pretplatite se da bi dobili najnovije ponude i slobodne datume.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Upiši mail"></p>
+      <button type="button" class="w3-button w3-padding-large w3-green w3-margin-bottom" onclick="document.getElementById('subscribe').style.display='none'">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<div id="register" class="w3-modal">
+    <div class="w3-modal-content w3-animate-zoom w3-padding-large">
+      <div class="w3-container w3-white w3-center">
+        <i onclick="document.getElementById('register').style.display='none'" class="fa fa-remove w3-button w3-xlarge w3-right w3-transparent"></i>
+        <h2 class="w3-wide">Registriraj se!</h2>
+        <p><input class="w3-input w3-border" type="text" placeholder="Korisničko ime"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Ime"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Prezime"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Mail"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Lozinka"></p>
+        <button type="button" class="w3-button w3-padding-large w3-green w3-margin-bottom" onclick="document.getElementById('register').style.display='none'">Registracija</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="login" class="w3-modal">
+    <div class="w3-modal-content w3-animate-zoom w3-padding-large">
+      <div class="w3-container w3-white w3-center">
+        <i onclick="document.getElementById('login').style.display='none'" class="fa fa-remove w3-button w3-xlarge w3-right w3-transparent"></i>
+        <h2 class="w3-wide">Registriraj se!</h2>
+        <p><input class="w3-input w3-border" type="text" placeholder="Korisničko ime"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Lozinka"></p>
+        <button type="button" class="w3-button w3-padding-large w3-green w3-margin-bottom" onclick="document.getElementById('login').style.display='none'">Prijava</button>
+      </div>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -2,12 +2,6 @@
   emailjs.init("user_2DhFWfxbcSV1gEGdmEZJM");
 })();
 
-var vdolazak = document.getElementById("dolazak").value;
-var vodlazak=document.getElementById("odlazak").value;
-var vodrasli=document.getElementById("odrasli").value;
-var vdjeca=document.getElementById("djeca").value;
-var vmail=document.getElementById("mail").value;
-
 function sendEmail(){
 console.log("sending...");
 
